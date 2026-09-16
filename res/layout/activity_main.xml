@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panneau de Contrôle InstaAuto"
+            android:textColor="#0F172A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 1. GESTION MULTI-COMPTES -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Gestion des Comptes Instagram"
+            android:textStyle="bold"
+            android:textColor="#334155"/>
+
+        <Spinner
+            android:id="@+id/spAccounts"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginTop="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+            
+            <EditText
+                android:id="@+id/etUser"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Nom d'utilisateur"/>
+
+            <EditText
+                android:id="@+id/etPass"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Mot de passe"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btnAddAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ajouter"/>
+        </LinearLayout>
+
+        <!-- 2. CONFIGURATION BOT TELEGRAM -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Configuration Bot Telegram"
+            android:textStyle="bold"
+            android:textColor="#334155"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/etBotToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jeton du Bot (Token Ex: 123456:ABC...)"/>
+
+        <EditText
+            android:id="@+id/etAdminChatId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Discussion Admin (Chat ID)"/>
+
+        <!-- 3. PARAMÈTRES D'AUTOMATISATION -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Délais et Limites de Sécurité"
+            android:textStyle="bold"
+            android:textColor="#334155"
+            android:layout_marginTop="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etMinDelay"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Délai Min (sec)"
+                android:inputType="number"
+                android:text="15"/>
+
+            <EditText
+                android:id="@+id/etMaxDelay"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Délai Max (sec)"
+                android:inputType="number"
+                android:text="35"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etDailyLimit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Limite Max par Jour (Ex: 50/jour)"
+            android:inputType="number"
+            android:text="50"/>
+
+        <!-- 4. STATISTIQUES ET CONSOLE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Statistiques et Console d'Historique"
+            android:textStyle="bold"
+            android:textColor="#334155"
+            android:layout_marginTop="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/tvSuccess"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="✅ REÇU: 0"
+                android:textColor="#166534"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvFailed"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="❌ NON REÇU: 0"
+                android:textColor="#991B1B"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvLogConsole"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#0F172A"
+            android:textColor="#38BDF8"
+            android:padding="8dp"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:scrollbars="vertical"
+            android:text="-- System Console --\nSystem Ready..."
+            android:layout_marginTop="8dp"/>
+
+        <!-- 5. BOUTON MARCHE / ARRÊT -->
+        <Button
+            android:id="@+id/btnToggle"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="DÉMARRER LE BOT"
+            android:backgroundTint="#16A34A"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+</ScrollView>
